@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kbra"
+version = "0.5.0"
+description = "企业知识库问答系统（RAG）：混合检索 + 本地生成 + FastAPI 服务化"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+# 核心依赖 = `import kbra.api` 真正需要的东西。jieba / BM25 / sentence-transformers /
+# transformers 都是函数内延迟导入，因此不装它们也能跑单测与 CI（CI 机没有 GPU）。
+dependencies = [
+    "numpy>=2.0",
+    "fastapi>=0.138",
+    "pydantic>=2.13",
+    "python-dotenv>=1.2",
+    "SQLAlchemy>=2.0",
+    "bcrypt>=5.0",
+]
+
+[project.optional-dependencies]
+retrieval = ["jieba>=0.42", "rank-bm25>=0.2.2", "sentence-transformers>=6.1"]
+ml = ["sentence-transformers>=6.1", "transformers>=5.17"]
+serve = ["uvicorn>=0.49", "PyMySQL>=1.2"]
+bench = ["locust>=2.46"]
+# TestClient 的 HTTP 客户端。starlette 1.7 把「httpx 当 TestClient 后端」标为 deprecated；
+# 三个 CI Python 版本实测：只装 httpx → 28 passed 但带 StarletteDeprecationWarning，
+# 换成 httpx2（并卸掉 httpx）→ 28 passed 且无告警。
+dev = ["pytest>=9.1", "httpx2>=2.13"]
+# 语料与索引不入库（见 README「从零复现」），重建时才需要这一组
+corpus = ["requests>=2.32", "python-docx>=1.1"]
+full = [
+    "jieba>=0.42",
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=6.1",
+    "transformers>=5.17",
+    "uvicorn>=0.49",
+    "PyMySQL>=1.2",
+    "locust>=2.46",
+    "requests>=2.32",
+    "python-docx>=1.1",
+    "pytest>=9.1",
+    "httpx2>=2.13",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint.flake8-bugbear]
+# FastAPI 的依赖注入惯用法就是在校验默认值里调用 Depends()/Header()，不是 bug。
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Header", "fastapi.Query"]

@@ -16,3 +16,7 @@ locust_report/
 dist/
 build/
 *.egg-info/
+# 本地工具缓存与覆盖率产物
+.ruff_cache/
+.coverage
+htmlcov/

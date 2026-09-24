@@ -13,16 +13,18 @@
 | 层 | 选型 | 理由 |
 |---|---|---|
 | 语言运行时 | Python **3.14** venv（`--system-site-packages` 复用全局 torch） | 全局已装 torch 2.12.1+cu130 且实测 CUDA 可用，新依赖只进 venv |
-| 文档解析 | pypdf / python-docx / markdown-it | 无外部服务依赖，纯本地 |
+| 文档解析 | `python-docx`（flk 官方 docx 正文）+ 正则清洗 | 无外部服务依赖，纯本地；语料落盘统一是带头部注释的 `.txt`，PDF/Markdown 解析**没做** |
 | 嵌入模型 | `BAAI/bge-small-zh-v1.5`（sentence-transformers） | 中文小模型，8GB 显存轻松跑，可离线，零 API 成本 |
 | 向量库 | numpy 全量余弦（1.6 万块量级足够，索引落盘 `data/index/`） | 少一个依赖；语料到 10 万块再换 faiss/Chroma |
 | 稀疏检索 | BM25（rank_bm25）+ 与向量结果 RRF 融合 | 混合检索是这类系统的常见要求，也是实测里的真实提分点 |
 | 重排 | `BAAI/bge-reranker-base`（本地 1.1GB，`src/kbra/rerank.py`） | 对比实验：加/不加 rerank 的 Recall/MRR 差异，见 M4 A/B 表 |
 | LLM | **本地模型**：transformers 跑 Qwen2.5-Instruct（用户指定不走云 API） | 评测数字可复现，不受云端模型变更影响；保留 OpenAI 兼容接口作为可选后端 |
 | 后端 | FastAPI + Uvicorn + pydantic v2 | 命中"后端开发"；一次性出词，**没做流式**（见「前端」行的理由） |
-| 数据库 | **MySQL 8.0.46**（用户/令牌/问答日志/反馈），本项目专属实例 `E:\DevEnv\mysql-kbra` 端口 3308 | 命中 JD 的 MySQL、数据库标签；系统 `MySQL80`（3306）root 密码未知、3307 实例属另一条线，见「本机环境事实」 |
+| 数据库 | **MySQL 8.0.46**（用户/令牌/问答日志/反馈），本项目专属实例 `E:\DevEnv\mysql-kbra` 端口 3308 | 命中 JD 的 MySQL、数据库标签；用专属实例而不是既有实例，是为了不读写同一台机器上其他项目的库，见「本机环境事实」 |
 | 前端 | 原生 HTML + CSS + fetch，与接口同源（`StaticFiles` 挂在 `/`） | 不引入构建链；生成端是 `model.generate` 一次性出词，**没有做流式**，所以不用 SSE，界面用「提问中…+ 端到端计时」 |
 | 压测 | locust 2.46.6（`scripts/locustfile.py`，无界面模式 + CSV） | 实测出并发下的真缺陷（连接池占满），数字见「M7 压测实测」 |
+| 打包 | `pyproject.toml`（setuptools，`src/` 布局）+ extras：`retrieval` / `ml` / `serve` / `bench` / `corpus` / `dev` / `full` | 核心依赖只含 `import kbra.api` 需要的 6 个包，torch/模型相关的都推到 extras，因此无 GPU 的 CI 机 `pip install -e ".[dev]"` 就能跑单测 |
+| CI | GitHub Actions（`.github/workflows/ci.yml`）：ruff 0.16.8 + pytest 矩阵 **3.10 / 3.12 / 3.14** | 两个 job 的每一步都在本机用干净 venv 预跑过（见「CI 与本地预跑」）；语料、GPU、MySQL 都不参与 |
 | 部署 | ~~Dockerfile + docker-compose~~ **未做**（2026-09-24 决定先压测、Docker 以后再说；本机也没装 Docker Desktop） | 当前以本机单进程方式运行，**不算已完成项** |
 
 ## 里程碑（每步都有可验收的产出）
@@ -43,6 +45,11 @@
 - **M7 压测** ✅（容器化暂缓）：locust 打真实链路，抓出并修掉两个只在并发下暴露的缺陷
   （请求级会话占满连接池 → 20 并发全 500；单卡并行生成互相拖慢）；
   修复后 100 并发 0 失败、P95 289s、聚合吞吐 0.13–0.19 req/s，数字见「M7 压测实测」
+- **M8 工程化** ✅（本次）：`pyproject.toml` 打包（`src/` 布局 + 6 个 extras，核心依赖只留
+  `import kbra.api` 真正需要的 6 个包）+ ruff 规则集跑净（零告警，含修掉一个真缺陷：
+  `db.py` 用了未导入的 `Engine`）+ `.github/workflows/ci.yml` 两个 job，
+  已在 3.10 / 3.12 / 3.14 三个干净 venv 里按 CI 的步骤预跑通过（见「CI 与本地预跑」）；
+  workflow 本身**还没在 GitHub 上执行过**（仓库尚未 push）
 
 ## 项目摘要（逐条对应下方实测记录，M4 段已回填真实数字）
 
@@ -68,6 +75,8 @@
 ```bash
 # 0) 依赖：先按官网命令装对应 CUDA 版本的 torch，再装清单（本项目 torch 不在清单里）
 pip install -r requirements.txt
+#    或用 pyproject 装：`pip install -e ".[full]"` 与上面清单等价（清单锁版本，extras 给范围）；
+#    只跑单测不需要语料和 GPU：`pip install -e ".[dev]"`，见「CI 与本地预跑」
 # 1) 三个模型（脚本走镜像直链，绕开 huggingface_hub 对镜像的 FileMetadataError）
 python scripts/fetch_model.py BAAI/bge-small-zh-v1.5
 python scripts/fetch_model.py BAAI/bge-reranker-base
@@ -95,6 +104,34 @@ python -m uvicorn kbra.api:app --app-dir src --port 8000   # 打开 http://127.0
 和个别 Recall 值不会和本机逐位相同。本 README 的所有数字都标注了实测日期，
 只作为这台机器这一天的一次记录，不是恒定值。
 
+## CI 与本地预跑（2026-09-25）
+
+`.github/workflows/ci.yml` 里两个 job 的每一步，都先在本机用**新建的干净 venv** 预跑过，
+所以 CI 唯一没被本机覆盖的是 GitHub runner 本身：
+
+| CI 步骤 | 本机预跑 | 结果 |
+|---|---|---|
+| `uvx ruff@0.16.8 check src scripts tests web` | 同一命令（版本锁死，避免新版规则把 CI 弄红；0.15.1 与 0.16.8 都实测零告警） | All checks passed! |
+| `pip install -e ".[dev]"` → `pytest -q` | `uv venv` 新建 Python **3.10 / 3.12 / 3.14** 三个干净环境 | 各 **28 passed**，全程未安装 torch |
+| `python -m compileall -q src scripts tests` | 同一命令（3.12、3.14） | 通过（`scripts/` 不被单测导入，靠这步兜语法） |
+
+能脱离 GPU 跑单测的原因：jieba / rank_bm25 / sentence-transformers / transformers / PyMySQL
+**全是函数内延迟导入**，而 `tests/test_api.py` 用 `dependency_overrides` 把索引与模型换成桩、
+把库指到 `tmp_path` 下的临时 sqlite（表结构与 MySQL 共用同一套 SQLAlchemy 元数据）。
+预跑时还特意把仓库拷到**没有 `.env`** 的临时目录复跑，同样 28 passed——不配 DSN 也能装、能测。
+
+两个顺带查实的问题：
+
+1. lint 确实抓到东西。最值钱的一条是 `src/kbra/db.py` 把 `Engine` 当类型用却从未导入它——
+   因为文件顶部有 `from __future__ import annotations`，注解不在运行期求值，所以单测一路全绿也
+   发现不了；修的时候第一个念头是「从 `sqlalchemy.orm` 导入」，直接跑单测就 `ImportError` 了
+   （SQLAlchemy 2.0 里 `Engine` 是**顶层**导出），改成 `from sqlalchemy import Engine` 才对。
+   其余是 8 处 `E741`（歧义变量名 `l`）、`B905`（`zip` 未加 `strict`）、`B017`（盲捕 `Exception`
+   的假测试）、13 处导入排序与 4 处多余的 `# -*- coding: utf-8 -*-`。
+2. `dev` 里从 `httpx` 换成 `httpx2`：starlette 1.7.0 把「用 httpx 当 TestClient 后端」标了
+   deprecated。三个 Python 版本都实测过——只装 httpx 时 28 passed 但带
+   `StarletteDeprecationWarning`；换成 httpx2（2.13.1）并卸掉 httpx 后 28 passed **且无告警**。
+
 ## 环境位置（一律放 E 盘，C 盘空间紧张）
 
 | 用途 | 路径 |
@@ -118,9 +155,9 @@ python -m uvicorn kbra.api:app --app-dir src --port 8000   # 打开 http://127.0
   - venv 内已装：transformers 5.17.0、sentence-transformers 6.1.0、
     scikit-learn、SQLAlchemy 2.0.51、httpx、rank_bm25、pytest、bcrypt 5.0.0、locust 2.46.6
   - 全局已有：fastapi 0.138.1、uvicorn 0.49.0、numpy 2.5.0、pandas 3.0.3
-- **MySQL：另起本项目专属实例（端口 3308）**。系统服务 `MySQL80` 在 3306 Running 但
-  **root 密码不在手上**，改它还要管理员权限；`E:\DevEnv\mysql` 那个 3307 实例是另一条线在用
-  （实测有多个 ESTABLISHED 连接），不能混用。所以用**同一套 mysqld 程序只读引用**另起一个：
+- **MySQL：另起本项目专属实例（端口 3308）**。3306 上的系统服务 `MySQL80` 和 `E:\DevEnv\mysql`
+  那个 3307 实例都归本机其他项目使用——凭证不在本项目手上、改动还要管理员权限，3307 实测还
+  有多个 ESTABLISHED 连接，混用等于把别的项目的库放进本项目的读写范围。所以用**同一套 mysqld 程序只读引用**另起一个：
   ```
   配置文件   E:\DevEnv\mysql-kbra\my.ini
   数据目录   E:\DevEnv\mysql-kbra\data          （版本 8.0.46，utf8mb4_0900_ai_ci）
