@@ -51,7 +51,8 @@
   `import kbra.api` 真正需要的 6 个包）+ ruff 规则集跑净（零告警，含修掉一个真缺陷：
   `db.py` 用了未导入的 `Engine`）+ `.github/workflows/ci.yml` 两个 job，
   已在 3.10 / 3.12 / 3.14 三个干净 venv 里按 CI 的步骤预跑通过（见「CI 与本地预跑」）；
-  workflow 本身**还没在 GitHub 上执行过**（仓库尚未 push）
+  workflow 已于 2026-09-25 在 GitHub 上真跑过首趟：4 个 job（ruff + 3.10/3.12/3.14 单测）全绿
+  （见「CI 与本地预跑」末尾）
 
 ## 项目摘要（逐条对应下方实测记录，M4 段已回填真实数字）
 
@@ -110,7 +111,7 @@ python -m uvicorn kbra.api:app --app-dir src --port 8000   # 打开 http://127.0
 ## CI 与本地预跑（2026-09-25）
 
 `.github/workflows/ci.yml` 里两个 job 的每一步，都先在本机用**新建的干净 venv** 预跑过，
-所以 CI 唯一没被本机覆盖的是 GitHub runner 本身：
+所以 push 前 GitHub runner 本身是唯一没被本机覆盖的变量（首趟实跑结果见本节末尾）：
 
 | CI 步骤 | 本机预跑 | 结果 |
 |---|---|---|
@@ -134,6 +135,12 @@ python -m uvicorn kbra.api:app --app-dir src --port 8000   # 打开 http://127.0
 2. `dev` 里从 `httpx` 换成 `httpx2`：starlette 1.7.0 把「用 httpx 当 TestClient 后端」标了
    deprecated。三个 Python 版本都实测过——只装 httpx 时 28 passed 但带
    `StarletteDeprecationWarning`；换成 httpx2（2.13.1）并卸掉 httpx 后 28 passed **且无告警**。
+
+**GitHub 首趟实跑（2026-09-25，push 后自动触发）**：run 结论 `success`，4 个 job 全绿——
+`静态检查（ruff）`、`单测（Python 3.10）`、`单测（Python 3.12）`、`单测（Python 3.14）`，
+逐 job 的 steps 里没有失败项。也就是说上面那张本机预跑表在真 runner 上原样成立，
+干净环境、无 `.env`、无 GPU、无 MySQL 也能装能测这条是**在 GitHub 上验证过的**，不只是本机推断。
+（再往后若改了依赖或 workflow，这个结论要重新跑一遍才算数。）
 
 ## 环境位置（一律放 E 盘，C 盘空间紧张）
 
