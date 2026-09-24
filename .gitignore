@@ -1,0 +1,18 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/raw/*
+models/
+# 索引产物由 scripts/build_index.py 从 data/raw 重建，不入库
+data/index/
+data/chunks.jsonl
+!data/raw/.gitkeep
+# 评测的终端日志不入库，指标 JSON（eval/retrieval.json、eval_full.json）入库
+eval/run_log*.txt
+locust_report/
+dist/
+build/
+*.egg-info/

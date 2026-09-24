@@ -1,0 +1,35 @@
+# 依赖清单 —— 解释器：E:\DevEnv\venvs\kb-rag-assistant（Python 3.14.5，--system-site-packages）
+# torch 不按这里装：venv 复用全局 torch 2.12.1+cu130（CUDA 已实测可用），
+# 若在新机器上重建，先按官网命令装对应 CUDA 版本的 torch，再装本清单。
+
+# --- M1 语料入库 ---
+pypdf==6.16.2
+python-docx==1.2.0
+
+# --- M2 检索（稠密 + 词法 + RRF；向量层是 numpy 全量余弦，未用向量数据库） ---
+numpy==2.5.0
+sentence-transformers==6.1.0
+transformers==5.17.0
+jieba==0.42.1
+rank-bm25==0.2.2
+
+# --- M3 生成（本地 Qwen2.5-3B-Instruct fp16） ---
+# 模型由 scripts/fetch_model.py 走 hf-mirror 直链下到 E:\DevEnv\hf-cache\models\
+
+# --- 抓取脚本（gov.cn / modelscope / flk.npc.gov.cn） ---
+httpx==0.28.1
+
+# --- M5 服务化与数据库（本机已装版本锁住） ---
+fastapi==0.138.1
+uvicorn==0.49.0
+pydantic==2.13.4
+python-dotenv==1.2.2
+SQLAlchemy==2.0.51
+PyMySQL==1.2.0
+bcrypt==5.0.0
+
+# --- M4 评测 ---
+pytest==9.1.1
+
+# --- M7 压测（已装；只在本机跑，不需要部署到线上） ---
+locust==2.46.6

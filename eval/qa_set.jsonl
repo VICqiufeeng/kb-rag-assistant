@@ -1,0 +1,117 @@
+{"id": "p001", "question": "处理个人信息应当遵循哪些原则，不得通过什么方式处理", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第五条"}], "answer": "诚信原则", "kind": "law"}
+{"id": "p002", "question": "哪些情形下处理个人信息可以不取得个人同意", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第十三条"}], "answer": "合同所必需", "kind": "law"}
+{"id": "p003", "question": "基于个人同意处理个人信息，个人可以撤回同意吗", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第十五条"}], "answer": "撤回同意", "kind": "law"}
+{"id": "p004", "question": "向其他个人信息处理者提供个人信息，需要取得个人单独同意吗", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第二十三条"}], "answer": "单独同意", "kind": "law"}
+{"id": "p005", "question": "什么是敏感个人信息，包括哪些信息", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第二十八条"}], "answer": "行踪轨迹", "kind": "law"}
+{"id": "p006", "question": "处理不满十四周岁未成年人个人信息应当取得谁的同意", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第三十一条"}], "answer": "监护人", "kind": "law"}
+{"id": "p007", "question": "国家机关处理的个人信息应当在境内还是境外存储", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第三十六条"}], "answer": "境内存储", "kind": "law"}
+{"id": "p008", "question": "个人信息处理者因业务需要向境外提供个人信息应当具备哪些条件", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第三十八条"}], "answer": "标准合同", "kind": "law"}
+{"id": "p009", "question": "个人有权向个人信息处理者查阅、复制自己的个人信息吗", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第四十五条"}], "answer": "查阅、复制", "kind": "law"}
+{"id": "p010", "question": "个人信息处理者应当主动删除个人信息的情形有哪些", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第四十七条"}], "answer": "删除", "kind": "law"}
+{"id": "p011", "question": "个人信息保护影响评估报告和处理情况记录应当至少保存几年", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第五十六条"}], "answer": "三年", "kind": "law"}
+{"id": "p012", "question": "提供重要互联网平台服务、用户数量巨大的平台要履行哪些个人信息保护义务", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第五十八条"}], "answer": "平台规则", "kind": "law"}
+{"id": "p013", "question": "违法处理个人信息情节严重的，最高可以处以多少罚款", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第六十六条"}], "answer": "五千万元", "kind": "law"}
+{"id": "p014", "question": "建立劳动关系后应当在多长时间内订立书面劳动合同", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第十条"}], "answer": "一个月内", "kind": "law"}
+{"id": "p015", "question": "劳动者在同一单位连续工作满多少年可以要求订立无固定期限劳动合同", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第十四条"}], "answer": "满十年", "kind": "law"}
+{"id": "p016", "question": "三年以上固定期限劳动合同的试用期最长不得超过几个月", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第十九条"}], "answer": "不得超过六个月", "kind": "law"}
+{"id": "p017", "question": "试用期工资不得低于劳动合同约定工资的百分之多少", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第二十条"}], "answer": "百分之八十", "kind": "law"}
+{"id": "p018", "question": "劳动合同解除后竞业限制期限最长不得超过几年", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第二十四条"}], "answer": "不得超过二年", "kind": "law"}
+{"id": "p019", "question": "劳动者提前多少日以书面形式通知用人单位可以解除劳动合同", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第三十七条"}], "answer": "三十日", "kind": "law"}
+{"id": "p020", "question": "试用期内劳动者辞职需要提前几天通知用人单位", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第三十七条"}], "answer": "三日", "kind": "law"}
+{"id": "p021", "question": "用人单位以劳动者不能胜任工作为由解除劳动合同，需要提前多少日通知或者额外支付一个月工资", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第四十条"}], "answer": "三十日", "kind": "law"}
+{"id": "p022", "question": "裁减人员二十人以上应当提前多少日向工会或者全体职工说明情况", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第四十一条"}], "answer": "三十日", "kind": "law"}
+{"id": "p023", "question": "劳动者在本单位患职业病或者因工负伤并被确认丧失劳动能力的，用人单位还能解除劳动合同吗", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第四十二条"}], "answer": "不得依照本法第四十条、第四十一条", "kind": "law"}
+{"id": "p024", "question": "经济补偿按劳动者在本单位工作的年限如何计算", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第四十七条"}], "answer": "每满一年支付一个月工资", "kind": "law"}
+{"id": "p025", "question": "用人单位应当在解除或者终止劳动合同后多少日内为劳动者办理档案和社会保险关系转移手续", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第五十条"}], "answer": "十五日内", "kind": "law"}
+{"id": "p026", "question": "集体合同报送劳动行政部门后多少日内未提出异议即行生效", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第五十四条"}], "answer": "十五日", "kind": "law"}
+{"id": "p027", "question": "经营劳务派遣业务注册资本不得少于多少万元", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第五十七条"}], "answer": "二百万元", "kind": "law"}
+{"id": "p028", "question": "劳务派遣单位应当与被派遣劳动者订立几年以上的固定期限劳动合同", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第五十八条"}], "answer": "二年以上", "kind": "law"}
+{"id": "p029", "question": "用人单位超过一个月不满一年未与劳动者订立书面劳动合同，应当支付几倍工资", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第八十二条"}], "answer": "二倍的工资", "kind": "law"}
+{"id": "p030", "question": "劳动者严重违反用人单位规章制度的，用人单位可以解除劳动合同吗", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第三十九条"}], "answer": "严重违反用人单位的规章制度", "kind": "law"}
+{"id": "p031", "question": "劳动者违反服务期或者竞业限制约定应当向用人单位支付什么", "gold": [{"title": "中华人民共和国劳动合同法", "article": "第二十三条"}], "answer": "违约金", "kind": "law"}
+{"id": "p032", "question": "国家在网络安全领域实行什么保护制度", "gold": [{"title": "中华人民共和国网络安全法", "article": "第二十一条"}], "answer": "网络安全等级保护制度", "kind": "law"}
+{"id": "p033", "question": "关键信息基础设施的运营者在境内运营中收集和产生的个人信息应当在哪里存储", "gold": [{"title": "中华人民共和国网络安全法", "article": "第三十七条"}], "answer": "境内存储", "kind": "law"}
+{"id": "p034", "question": "网络运营者为用户办理网络接入手续应当要求用户提供什么信息", "gold": [{"title": "中华人民共和国网络安全法", "article": "第二十四条"}], "answer": "真实身份信息", "kind": "law"}
+{"id": "p035", "question": "网络运营者收集、使用个人信息应当遵循什么原则", "gold": [{"title": "中华人民共和国网络安全法", "article": "第四十一条"}], "answer": "合法、正当、必要", "kind": "law"}
+{"id": "p036", "question": "网络运营者不履行网络安全保护义务的，可以被处以什么幅度的罚款", "gold": [{"title": "中华人民共和国网络安全法", "article": "第五十九条"}], "answer": "一万元以上十万元以下", "kind": "law"}
+{"id": "p037", "question": "关键信息基础设施运营者使用未经安全审查的网络产品或服务，罚款按什么计算", "gold": [{"title": "中华人民共和国网络安全法", "article": "第六十五条"}], "answer": "采购金额一倍以上十倍以下", "kind": "law"}
+{"id": "p038", "question": "在境外存储网络数据或者向境外提供网络数据会被怎样处罚", "gold": [{"title": "中华人民共和国网络安全法", "article": "第六十六条"}], "answer": "五万元以上五十万元以下", "kind": "law"}
+{"id": "p039", "question": "国家建立什么样的数据保护制度，对数据实行分类分级保护", "gold": [{"title": "中华人民共和国数据安全法", "article": "第二十一条"}], "answer": "分类分级", "kind": "law"}
+{"id": "p040", "question": "重要数据的处理者应当定期开展风险评估并向主管部门报送什么", "gold": [{"title": "中华人民共和国数据安全法", "article": "第三十条"}], "answer": "风险评估报告", "kind": "law"}
+{"id": "p041", "question": "未经主管机关批准，能否向外国司法或者执法机构提供存储于境内的数据", "gold": [{"title": "中华人民共和国数据安全法", "article": "第三十六条"}], "answer": "主管机关批准", "kind": "law"}
+{"id": "p042", "question": "违反规定向境外提供重要数据的，可以并处什么幅度的罚款", "gold": [{"title": "中华人民共和国数据安全法", "article": "第四十六条"}], "answer": "十万元以上一百万元以下", "kind": "law"}
+{"id": "p043", "question": "从事数据交易中介服务的机构应当要求数据提供者说明什么", "gold": [{"title": "中华人民共和国数据安全法", "article": "第三十三条"}], "answer": "数据来源", "kind": "law"}
+{"id": "p044", "question": "通过网络购物方式销售的商品，消费者可以自收到商品之日起几日内退货", "gold": [{"title": "中华人民共和国消费者权益保护法", "article": "第二十五条"}], "answer": "七日内", "kind": "law"}
+{"id": "p045", "question": "经营者提供商品有欺诈行为的，增加赔偿的金额为价款的几倍", "gold": [{"title": "中华人民共和国消费者权益保护法", "article": "第五十五条"}], "answer": "三倍", "kind": "law"}
+{"id": "p046", "question": "经营者以格式条款排除或者限制消费者权利，该条款效力如何", "gold": [{"title": "中华人民共和国消费者权益保护法", "article": "第二十六条"}], "answer": "无效", "kind": "law"}
+{"id": "p047", "question": "消费者向有关行政部门投诉后，该部门应当在几个工作日内处理并告知", "gold": [{"title": "中华人民共和国消费者权益保护法", "article": "第四十六条"}], "answer": "七个工作日", "kind": "law"}
+{"id": "p048", "question": "耐用商品自接受之日起多长时间内发生瑕疵由经营者承担举证责任", "gold": [{"title": "中华人民共和国消费者权益保护法", "article": "第二十三条"}], "answer": "六个月", "kind": "law"}
+{"id": "p049", "question": "参加基本养老保险的个人达到法定退休年龄时累计缴费满多少年可以按月领取基本养老金", "gold": [{"title": "中华人民共和国社会保险法", "article": "第十六条"}], "answer": "十五年", "kind": "law"}
+{"id": "p050", "question": "用人单位应当自成立之日起多少日内申请办理社会保险登记", "gold": [{"title": "中华人民共和国社会保险法", "article": "第五十七条"}], "answer": "三十日", "kind": "law"}
+{"id": "p051", "question": "用人单位应当自用工之日起多少日内为其职工向社会保险经办机构申请办理社会保险登记", "gold": [{"title": "中华人民共和国社会保险法", "article": "第五十八条"}], "answer": "三十日", "kind": "law"}
+{"id": "p052", "question": "哪些医疗费用不纳入基本医疗保险基金支付范围", "gold": [{"title": "中华人民共和国社会保险法", "article": "第三十条"}], "answer": "第三人负担", "kind": "law"}
+{"id": "p053", "question": "失业人员领取失业保险金需要满足什么缴费条件", "gold": [{"title": "中华人民共和国社会保险法", "article": "第四十五条"}], "answer": "满一年", "kind": "law"}
+{"id": "p054", "question": "失业保险金最长可以领取多少个月", "gold": [{"title": "中华人民共和国社会保险法", "article": "第四十六条"}], "answer": "二十四个月", "kind": "law"}
+{"id": "p055", "question": "广告中不得使用哪些用语", "gold": [{"title": "中华人民共和国广告法", "article": "第九条"}], "answer": "国家级", "kind": "law"}
+{"id": "p056", "question": "广告代言人能不能为自己没有使用过的商品作推荐", "gold": [{"title": "中华人民共和国广告法", "article": "第三十八条"}], "answer": "未使用过", "kind": "law"}
+{"id": "p057", "question": "发布虚假广告可以处广告费用几倍的罚款", "gold": [{"title": "中华人民共和国广告法", "article": "第五十五条"}], "answer": "五倍", "kind": "law"}
+{"id": "p058", "question": "药品广告能不能含有表示功效和安全性的断言或者保证", "gold": [{"title": "中华人民共和国广告法", "article": "第十六条"}], "answer": "断言或者保证", "kind": "law"}
+{"id": "p059", "question": "向人民法院请求保护民事权利的诉讼时效期间是几年", "gold": [{"title": "中华人民共和国民法典", "article": "第一百八十八条"}], "answer": "三年", "kind": "law"}
+{"id": "p060", "question": "因保护他人民事权益使自己受到损害的，责任由谁承担", "gold": [{"title": "中华人民共和国民法典", "article": "第一百八十三条"}], "answer": "适当补偿", "kind": "law"}
+{"id": "p061", "question": "从建筑物中抛掷物品造成他人损害，责任怎么承担", "gold": [{"title": "中华人民共和国民法典", "article": "第一千二百五十四条"}], "answer": "抛掷物品", "kind": "law"}
+{"id": "p062", "question": "当事人一方不履行合同义务的应当承担哪些违约责任", "gold": [{"title": "中华人民共和国民法典", "article": "第五百七十七条"}], "answer": "继续履行", "kind": "law"}
+{"id": "p063", "question": "什么是格式条款", "gold": [{"title": "中华人民共和国民法典", "article": "第四百九十六条"}], "answer": "预先拟定", "kind": "law"}
+{"id": "p064", "question": "因正当防卫造成损害的要不要承担民事责任", "gold": [{"title": "中华人民共和国民法典", "article": "第一百八十一条"}], "answer": "不承担民事责任", "kind": "law"}
+{"id": "p065", "question": "自然人的民事权利能力有什么特点", "gold": [{"title": "中华人民共和国民法典", "article": "第十四条"}], "answer": "一律平等", "kind": "law"}
+{"id": "p066", "question": "动产物权的设立和转让自什么时候起发生效力", "gold": [{"title": "中华人民共和国民法典", "article": "第二百二十四条"}], "answer": "交付", "kind": "law"}
+{"id": "p067", "question": "八周岁以上的未成年人在法律上属于什么能力人", "gold": [{"title": "中华人民共和国民法典", "article": "第十九条"}], "answer": "限制民事行为能力人", "kind": "law"}
+{"id": "p068", "question": "拾得遗失物应当怎么处理", "gold": [{"title": "中华人民共和国民法典", "article": "第三百一十四条"}], "answer": "返还权利人", "kind": "law"}
+{"id": "p069", "question": "供应商认为采购过程使自己权益受损，应当在几个工作日内向采购人提出书面质疑", "gold": [{"title": "中华人民共和国政府采购法", "article": "第五十二条"}], "answer": "七个工作日", "kind": "law"}
+{"id": "p070", "question": "政府采购应当采用哪种主要采购方式", "gold": [{"title": "中华人民共和国政府采购法", "article": "第二十六条"}], "answer": "公开招标", "kind": "law"}
+{"id": "p071", "question": "在中华人民共和国境内进行哪些工程建设项目必须进行招标", "gold": [{"title": "中华人民共和国招标投标法", "article": "第三条"}], "answer": "必须进行招标", "kind": "law"}
+{"id": "p072", "question": "招标人与中标人应当自中标通知书发出之日起多少日内订立书面合同", "gold": [{"title": "中华人民共和国招标投标法", "article": "第四十六条"}], "answer": "三十日", "kind": "law"}
+{"id": "p073", "question": "注册商标的有效期为多少年", "gold": [{"title": "中华人民共和国商标法", "article": "第三十九条"}], "answer": "十年", "kind": "law"}
+{"id": "p074", "question": "哪些行为属于侵犯注册商标专用权", "gold": [{"title": "中华人民共和国商标法", "article": "第五十七条"}], "answer": "注册商标专用权", "kind": "law"}
+{"id": "p075", "question": "自然人的作品，其发表权和财产权的保护期是作者终生及死后多少年", "gold": [{"title": "中华人民共和国著作权法", "article": "第二十三条"}], "answer": "五十年", "kind": "law"}
+{"id": "p076", "question": "哪些作品不受著作权法保护", "gold": [{"title": "中华人民共和国著作权法", "article": "第五条"}], "answer": "立法、行政、司法", "kind": "law"}
+{"id": "p077", "question": "生产不符合食品安全标准的食品，消费者可以要求支付价款几倍的赔偿金", "gold": [{"title": "中华人民共和国食品安全法", "article": "第一百四十八条"}], "answer": "十倍", "kind": "law"}
+{"id": "p078", "question": "食品生产者发现食品不符合安全标准应当采取什么措施", "gold": [{"title": "中华人民共和国食品安全法", "article": "第六十三条"}], "answer": "召回", "kind": "law"}
+{"id": "p079", "question": "县级以上地方人民政府在药品监管方面要负责哪些工作", "gold": [{"title": "中华人民共和国药品管理法", "article": "第九条"}], "answer": "药品安全突发事件应对", "kind": "law"}
+{"id": "p080", "question": "饮酒后驾驶机动车会被暂扣驾驶证多长时间并处罚款", "gold": [{"title": "中华人民共和国道路交通安全法", "article": "第九十一条"}], "answer": "六个月", "kind": "law"}
+{"id": "p081", "question": "机动车之间发生交通事故由谁承担赔偿责任", "gold": [{"title": "中华人民共和国道路交通安全法", "article": "第七十六条"}], "answer": "过错", "kind": "law"}
+{"id": "p082", "question": "生产经营单位的主要负责人对本单位安全生产工作负有什么职责", "gold": [{"title": "中华人民共和国安全生产法", "article": "第五条"}], "answer": "全面负责", "kind": "law"}
+{"id": "p083", "question": "从业人员发现直接危及人身安全的紧急情况时可以怎么办", "gold": [{"title": "中华人民共和国安全生产法", "article": "第五十五条"}], "answer": "停止作业", "kind": "law"}
+{"id": "p084", "question": "网络产品和服务提供者能不能向未成年人提供诱导其沉迷的产品和服务", "gold": [{"title": "中华人民共和国未成年人保护法", "article": "第七十四条"}], "answer": "诱导其沉迷", "kind": "law"}
+{"id": "p085", "question": "治安管理处罚的种类分为哪几种", "gold": [{"title": "中华人民共和国治安管理处罚法", "article": "第十条"}], "answer": "警告", "kind": "law"}
+{"id": "p086", "question": "公民享有选举权和被选举权的最低年龄是多少", "gold": [{"title": "中华人民共和国宪法", "article": "第三十四条"}], "answer": "十八周岁", "kind": "law"}
+{"id": "p087", "question": "中华人民共和国全国人民代表大会是最高国家权力机关吗", "gold": [{"title": "中华人民共和国宪法", "article": "第五十七条"}], "answer": "最高国家权力机关", "kind": "law"}
+{"id": "p088", "question": "当事人不服地方人民法院第一审判决的，有权在判决书送达之日起多少日内上诉", "gold": [{"title": "中华人民共和国民事诉讼法", "article": "第一百七十一条"}], "answer": "十五日", "kind": "law"}
+{"id": "p089", "question": "公民、法人或者其他组织直接向人民法院提起诉讼的，应当自知道作出行政行为之日起多长时间内提出", "gold": [{"title": "中华人民共和国行政诉讼法", "article": "第四十六条"}], "answer": "六个月", "kind": "law"}
+{"id": "p090", "question": "国家建立什么样的突发事件应急预案体系，总体应急预案由谁制定", "gold": [{"title": "中华人民共和国突发事件应对法", "article": "第二十六条"}], "answer": "总体应急预案", "kind": "law"}
+{"id": "p091", "question": "每年几月几日是全民健身日", "gold": [{"title": "国务院关于印发《全民健身计划（2026—2030年）》的通知"}], "answer": "全民健身", "kind": "policy"}
+{"id": "p092", "question": "到2030年全民健身公共服务体系要达到什么目标", "gold": [{"title": "国务院关于印发《全民健身计划（2026—2030年）》的通知"}], "answer": "公共服务体系", "kind": "policy"}
+{"id": "p093", "question": "国家针对中小企业回款难问题，引导大型企业带头践行多少日付现承诺", "gold": [{"title": "国务院办公厅关于加强中小企业回款难问题治理有关工作的通知"}], "answer": "60日", "kind": "policy"}
+{"id": "p094", "question": "电子凭证最长付款期限被压减到几个月", "gold": [{"title": "国务院办公厅关于加强中小企业回款难问题治理有关工作的通知"}], "answer": "6个月", "kind": "policy"}
+{"id": "p095", "question": "中国（内蒙古）自由贸易试验区提出经过几年改革探索", "gold": [{"title": "国务院关于印发《中国（内蒙古）自由贸易试验区总体方案》的通知"}], "answer": "三至五年", "kind": "policy"}
+{"id": "p096", "question": "即时配送行业高质量发展有哪些指导意见要求", "gold": [{"title": "国务院办公厅关于促进即时配送行业高质量发展的指导意见"}], "answer": "配送", "kind": "policy"}
+{"id": "p097", "question": "私募基金高质量发展要加强哪些方面的监管防范风险", "gold": [{"title": "国务院办公厅关于加强监管防范风险促进私募投资基金高质量发展的指导意见"}], "answer": "私募基金", "kind": "policy"}
+{"id": "p098", "question": "碳达峰行动方案对重点领域有什么总体部署", "gold": [{"title": "国务院关于印发《“十五五”碳达峰行动方案》的通知"}], "answer": "碳达峰", "kind": "policy"}
+{"id": "p099", "question": "城中村改造在超大特大城市如何稳步推进", "gold": [{"title": "国务院办公厅关于在超大特大城市积极稳步推进城中村改造的指导意见"}], "answer": "城中村", "kind": "policy"}
+{"id": "p100", "question": "国民健康十五五规划围绕哪些方面部署重点任务", "gold": [{"title": "国务院关于印发《国民健康“十五五”规划》的通知"}], "answer": "健康", "kind": "policy"}
+{"id": "p101", "question": "开展第三次全国残疾人抽样调查的目的是什么，对象包括哪些", "gold": [{"title": "国务院办公厅关于开展第三次全国残疾人抽样调查的通知"}], "answer": "抽样调查", "kind": "policy"}
+{"id": "p102", "question": "知识产权保护和运用十五五规划提出什么目标", "gold": [{"title": "国务院关于印发《知识产权保护和运用“十五五”规划》的通知"}], "answer": "知识产权", "kind": "policy"}
+{"id": "p103", "question": "个人数据出境需要安全评估吗", "gold": [{"title": "中华人民共和国个人信息保护法", "article": "第三十八条"}, {"title": "中华人民共和国数据安全法", "article": "第三十一条"}], "answer": "安全评估", "kind": "law", "note": "词汇缺口探针：问法用「数据」，资料用「信息」"}
+{"id": "n001", "question": "2026年世界杯冠军是谁", "gold": [], "negative": true, "kind": "neg"}
+{"id": "n002", "question": "Python 的装饰器应该怎么写", "gold": [], "negative": true, "kind": "neg"}
+{"id": "n003", "question": "红楼梦后四十回是谁续写的", "gold": [], "negative": true, "kind": "neg"}
+{"id": "n004", "question": "比特币今天的价格是多少", "gold": [], "negative": true, "kind": "neg"}
+{"id": "n005", "question": "Nintendo Switch 2 什么时候发售", "gold": [], "negative": true, "kind": "neg"}
+{"id": "n006", "question": "如何用 SQL 优化慢查询的执行计划", "gold": [], "negative": true, "kind": "neg"}
+{"id": "n007", "question": "上海浦东的二手房均价是多少", "gold": [], "negative": true, "kind": "neg"}
+{"id": "n008", "question": "马拉松比赛前一周应该怎么训练", "gold": [], "negative": true, "kind": "neg"}
+{"id": "n009", "question": "莎士比亚十四行诗第十八首的英文原文是什么", "gold": [], "negative": true, "kind": "neg"}
+{"id": "n010", "question": "咖啡豆中浅烘焙的推荐温度曲线是多少", "gold": [], "negative": true, "kind": "neg"}
+{"id": "n011", "question": "我的社保卡丢了怎么在线上补办", "gold": [], "negative": true, "kind": "neg", "note": "公司内部流程类问题，公开法规里没有具体办理入口"}
+{"id": "n012", "question": "公司年假可以折算成几天调休给员工吗", "gold": [], "negative": true, "kind": "neg", "note": "需要企业内部制度，语料未含"}
+{"id": "n013", "question": "北京环球影城的门票可以改期吗", "gold": [], "negative": true, "kind": "neg"}
+{"id": "n014", "question": "深度学习训练时 batch size 选多大比较好", "gold": [], "negative": true, "kind": "neg"}

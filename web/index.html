@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>企业知识库问答系统</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>企业知识库问答系统</h1>
+  <div id="whoami" class="whoami"></div>
+</header>
+
+<main>
+  <!-- 登录 / 注册 -->
+  <section id="authCard" class="card auth">
+    <h2>登录</h2>
+    <p class="hint">口令只走本地接口；令牌存 localStorage，72 小时后过期。</p>
+    <label>用户名 <input id="username" autocomplete="username" placeholder="abc"></label>
+    <label>密码 <input id="password" type="password" autocomplete="current-password" placeholder="至少 8 位"></label>
+    <div class="row">
+      <button id="btnLogin" class="primary">登录</button>
+      <button id="btnRegister">注册新用户</button>
+      <span id="authMsg" class="msg"></span>
+    </div>
+  </section>
+
+  <!-- 问答 -->
+  <section id="app" class="col" hidden>
+    <div class="card">
+      <label class="ask">
+        <span>提问</span>
+        <textarea id="question" rows="3" placeholder="例如：劳动合同试用期最长能约定多久"></textarea>
+      </label>
+      <div class="row">
+        <button id="btnAsk" class="primary">提问</button>
+        <label class="opt">入模条数
+          <select id="kSel"><option>2</option><option selected>4</option><option>6</option><option>8</option></select>
+        </label>
+        <span id="askMsg" class="msg"></span>
+      </div>
+    </div>
+
+    <div id="result"></div>
+
+    <div class="card">
+      <h3>检索调试</h3>
+      <p class="hint">本次进入 Prompt 的资料（稠密 + BM25 经 RRF 融合后的名次）。看漏检/错引时以这里为准。</p>
+      <table id="dbgTable">
+        <thead><tr><th>#</th><th>chunk_id</th><th>资料</th><th>RRF 分</th></tr></thead>
+        <tbody><tr><td colspan="4" class="muted">提问后显示</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>历史记录</h3>
+      <ul id="history" class="history"><li class="muted">尚无记录</li></ul>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

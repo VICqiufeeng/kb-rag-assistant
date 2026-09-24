@@ -1,0 +1,788 @@
+{
+  "index": {
+    "chunks": 15993,
+    "docs": 400,
+    "dim": 512,
+    "embed_model": "bge-small-zh-v1.5",
+    "built_at": "2026-09-24 21:32:05"
+  },
+  "k": 5,
+  "retrieval": [
+    {
+      "mode": "dense",
+      "k": 5,
+      "n": 103,
+      "recall@5": 0.9612,
+      "mrr": 0.8879,
+      "misses": [
+        {
+          "id": "p004",
+          "question": "向其他个人信息处理者提供个人信息，需要取得个人单独同意吗",
+          "gold": [
+            "flk_01#22"
+          ],
+          "top1": "flk_01#13"
+        },
+        {
+          "id": "p070",
+          "question": "政府采购应当采用哪种主要采购方式",
+          "gold": [
+            "law_053#25"
+          ],
+          "top1": "law_053#16"
+        },
+        {
+          "id": "p076",
+          "question": "哪些作品不受著作权法保护",
+          "gold": [
+            "law_143#4"
+          ],
+          "top1": "law_143#22"
+        },
+        {
+          "id": "p078",
+          "question": "食品生产者发现食品不符合安全标准应当采取什么措施",
+          "gold": [
+            "law_173#63"
+          ],
+          "top1": "law_173#41"
+        }
+      ]
+    },
+    {
+      "mode": "bm25",
+      "k": 5,
+      "n": 103,
+      "recall@5": 0.9806,
+      "mrr": 0.9005,
+      "misses": [
+        {
+          "id": "p055",
+          "question": "广告中不得使用哪些用语",
+          "gold": [
+            "law_043#8"
+          ],
+          "top1": "law_043#16"
+        },
+        {
+          "id": "p076",
+          "question": "哪些作品不受著作权法保护",
+          "gold": [
+            "law_143#4"
+          ],
+          "top1": "law_143#34"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid(cand=40)",
+      "k": 5,
+      "n": 103,
+      "recall@5": 0.9806,
+      "mrr": 0.9102,
+      "misses": [
+        {
+          "id": "p076",
+          "question": "哪些作品不受著作权法保护",
+          "gold": [
+            "law_143#4"
+          ],
+          "top1": "law_143#22"
+        },
+        {
+          "id": "p078",
+          "question": "食品生产者发现食品不符合安全标准应当采取什么措施",
+          "gold": [
+            "law_173#63"
+          ],
+          "top1": "law_173#52"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid(cand=20)",
+      "k": 5,
+      "n": 103,
+      "recall@5": 0.9806,
+      "mrr": 0.9102,
+      "misses": [
+        {
+          "id": "p076",
+          "question": "哪些作品不受著作权法保护",
+          "gold": [
+            "law_143#4"
+          ],
+          "top1": "law_143#22"
+        },
+        {
+          "id": "p078",
+          "question": "食品生产者发现食品不符合安全标准应当采取什么措施",
+          "gold": [
+            "law_173#63"
+          ],
+          "top1": "law_173#52"
+        }
+      ]
+    }
+  ],
+  "generation": {
+    "sampled": 40,
+    "negatives": 14,
+    "answer_with_citation": 0.925,
+    "citation_in_gold": 1.0,
+    "hallucinated_law": 0.0,
+    "citation_mismatch": 0.0,
+    "retrieval_hit@4": 1.0,
+    "correct_refusal": 0.9286,
+    "rows": [
+      {
+        "id": "p001",
+        "question": "处理个人信息应当遵循哪些原则，不得通过什么方式处理",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 8.44
+      },
+      {
+        "id": "p003",
+        "question": "基于个人同意处理个人信息，个人可以撤回同意吗",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.95
+      },
+      {
+        "id": "p005",
+        "question": "什么是敏感个人信息，包括哪些信息",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 10.65
+      },
+      {
+        "id": "p007",
+        "question": "国家机关处理的个人信息应当在境内还是境外存储",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 10.19
+      },
+      {
+        "id": "p009",
+        "question": "个人有权向个人信息处理者查阅、复制自己的个人信息吗",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 10.39
+      },
+      {
+        "id": "p011",
+        "question": "个人信息保护影响评估报告和处理情况记录应当至少保存几年",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 10.48
+      },
+      {
+        "id": "p013",
+        "question": "违法处理个人信息情节严重的，最高可以处以多少罚款",
+        "negative": false,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.46
+      },
+      {
+        "id": "p015",
+        "question": "劳动者在同一单位连续工作满多少年可以要求订立无固定期限劳动合同",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 10.08
+      },
+      {
+        "id": "p017",
+        "question": "试用期工资不得低于劳动合同约定工资的百分之多少",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 10.11
+      },
+      {
+        "id": "p019",
+        "question": "劳动者提前多少日以书面形式通知用人单位可以解除劳动合同",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 10.09
+      },
+      {
+        "id": "p021",
+        "question": "用人单位以劳动者不能胜任工作为由解除劳动合同，需要提前多少日通知或者额外支付一个月工资",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.89
+      },
+      {
+        "id": "p023",
+        "question": "劳动者在本单位患职业病或者因工负伤并被确认丧失劳动能力的，用人单位还能解除劳动合同吗",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.78
+      },
+      {
+        "id": "p025",
+        "question": "用人单位应当在解除或者终止劳动合同后多少日内为劳动者办理档案和社会保险关系转移手续",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.65
+      },
+      {
+        "id": "p027",
+        "question": "经营劳务派遣业务注册资本不得少于多少万元",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.0
+      },
+      {
+        "id": "p029",
+        "question": "用人单位超过一个月不满一年未与劳动者订立书面劳动合同，应当支付几倍工资",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.97
+      },
+      {
+        "id": "p031",
+        "question": "劳动者违反服务期或者竞业限制约定应当向用人单位支付什么",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.38
+      },
+      {
+        "id": "p033",
+        "question": "关键信息基础设施的运营者在境内运营中收集和产生的个人信息应当在哪里存储",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.61
+      },
+      {
+        "id": "p035",
+        "question": "网络运营者收集、使用个人信息应当遵循什么原则",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.23
+      },
+      {
+        "id": "p037",
+        "question": "关键信息基础设施运营者使用未经安全审查的网络产品或服务，罚款按什么计算",
+        "negative": false,
+        "refused": true,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 10.17
+      },
+      {
+        "id": "p039",
+        "question": "国家建立什么样的数据保护制度，对数据实行分类分级保护",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 11.69
+      },
+      {
+        "id": "p041",
+        "question": "未经主管机关批准，能否向外国司法或者执法机构提供存储于境内的数据",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 12.81
+      },
+      {
+        "id": "p043",
+        "question": "从事数据交易中介服务的机构应当要求数据提供者说明什么",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 13.47
+      },
+      {
+        "id": "p045",
+        "question": "经营者提供商品有欺诈行为的，增加赔偿的金额为价款的几倍",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 13.01
+      },
+      {
+        "id": "p047",
+        "question": "消费者向有关行政部门投诉后，该部门应当在几个工作日内处理并告知",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 14.26
+      },
+      {
+        "id": "p049",
+        "question": "参加基本养老保险的个人达到法定退休年龄时累计缴费满多少年可以按月领取基本养老金",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 14.59
+      },
+      {
+        "id": "p051",
+        "question": "用人单位应当自用工之日起多少日内为其职工向社会保险经办机构申请办理社会保险登记",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 12.92
+      },
+      {
+        "id": "p053",
+        "question": "失业人员领取失业保险金需要满足什么缴费条件",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 13.51
+      },
+      {
+        "id": "p055",
+        "question": "广告中不得使用哪些用语",
+        "negative": false,
+        "refused": false,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 13.4
+      },
+      {
+        "id": "p057",
+        "question": "发布虚假广告可以处广告费用几倍的罚款",
+        "negative": false,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 8.6
+      },
+      {
+        "id": "p059",
+        "question": "向人民法院请求保护民事权利的诉讼时效期间是几年",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 10.81
+      },
+      {
+        "id": "p061",
+        "question": "从建筑物中抛掷物品造成他人损害，责任怎么承担",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 13.98
+      },
+      {
+        "id": "p063",
+        "question": "什么是格式条款",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 13.11
+      },
+      {
+        "id": "p065",
+        "question": "自然人的民事权利能力有什么特点",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 13.17
+      },
+      {
+        "id": "p067",
+        "question": "八周岁以上的未成年人在法律上属于什么能力人",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 13.29
+      },
+      {
+        "id": "p069",
+        "question": "供应商认为采购过程使自己权益受损，应当在几个工作日内向采购人提出书面质疑",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 12.46
+      },
+      {
+        "id": "p071",
+        "question": "在中华人民共和国境内进行哪些工程建设项目必须进行招标",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 13.48
+      },
+      {
+        "id": "p073",
+        "question": "注册商标的有效期为多少年",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 11.47
+      },
+      {
+        "id": "p075",
+        "question": "自然人的作品，其发表权和财产权的保护期是作者终生及死后多少年",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 12.15
+      },
+      {
+        "id": "p077",
+        "question": "生产不符合食品安全标准的食品，消费者可以要求支付价款几倍的赔偿金",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 11.45
+      },
+      {
+        "id": "p079",
+        "question": "县级以上地方人民政府在药品监管方面要负责哪些工作",
+        "negative": false,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": true,
+        "retrieval_hit@4": true,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 12.67
+      },
+      {
+        "id": "n001",
+        "question": "2026年世界杯冠军是谁",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 12.17
+      },
+      {
+        "id": "n002",
+        "question": "Python 的装饰器应该怎么写",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.8
+      },
+      {
+        "id": "n003",
+        "question": "红楼梦后四十回是谁续写的",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 12.68
+      },
+      {
+        "id": "n004",
+        "question": "比特币今天的价格是多少",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.21
+      },
+      {
+        "id": "n005",
+        "question": "Nintendo Switch 2 什么时候发售",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 12.53
+      },
+      {
+        "id": "n006",
+        "question": "如何用 SQL 优化慢查询的执行计划",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 12.69
+      },
+      {
+        "id": "n007",
+        "question": "上海浦东的二手房均价是多少",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 7.51
+      },
+      {
+        "id": "n008",
+        "question": "马拉松比赛前一周应该怎么训练",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 8.71
+      },
+      {
+        "id": "n009",
+        "question": "莎士比亚十四行诗第十八首的英文原文是什么",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 8.96
+      },
+      {
+        "id": "n010",
+        "question": "咖啡豆中浅烘焙的推荐温度曲线是多少",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.39
+      },
+      {
+        "id": "n011",
+        "question": "我的社保卡丢了怎么在线上补办",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 8.23
+      },
+      {
+        "id": "n012",
+        "question": "公司年假可以折算成几天调休给员工吗",
+        "negative": true,
+        "refused": false,
+        "cited": true,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.43
+      },
+      {
+        "id": "n013",
+        "question": "北京环球影城的门票可以改期吗",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 8.63
+      },
+      {
+        "id": "n014",
+        "question": "深度学习训练时 batch size 选多大比较好",
+        "negative": true,
+        "refused": true,
+        "cited": false,
+        "citation_in_gold": false,
+        "retrieval_hit@4": false,
+        "suspicious": [],
+        "mismatches": [],
+        "tok_per_s": 9.01
+      }
+    ]
+  }
+}
