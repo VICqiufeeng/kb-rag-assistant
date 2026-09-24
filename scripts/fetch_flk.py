@@ -93,7 +93,7 @@ def to_articles(data: bytes, title: str) -> list[str]:
             lines.append(t)
         elif lines:
             lines[-1] += t          # 条文续行（列表项如「（一）…」常独立成段）
-    return [f"《{title}》{l}" for l in lines]
+    return [f"《{title}》{ln}" for ln in lines]
 
 
 def main() -> None:

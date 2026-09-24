@@ -13,9 +13,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from kbra.config import EVAL_SET                       # noqa: E402
-from kbra.evaluate import evaluate_retrieval, resolve_gold, summarize   # noqa: E402
-from kbra.index import Index                           # noqa: E402
+from kbra.config import EVAL_SET  # noqa: E402
+from kbra.evaluate import evaluate_retrieval, resolve_gold, summarize  # noqa: E402
+from kbra.index import Index  # noqa: E402
 
 
 def retrievers(idx: Index):
@@ -100,8 +100,8 @@ def main() -> None:
     ap.add_argument("--out", default="")
     args = ap.parse_args()
 
-    items = [json.loads(l) for l in
-             EVAL_SET.read_text(encoding="utf-8").splitlines() if l.strip()]
+    items = [json.loads(line) for line in
+             EVAL_SET.read_text(encoding="utf-8").splitlines() if line.strip()]
     idx = Index()
     resolved, warns = resolve_gold(items, idx.chunks)
     if warns:

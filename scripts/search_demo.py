@@ -10,7 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from kbra.index import Index                    # noqa: E402
+from kbra.index import Index  # noqa: E402
 
 DEFAULT_QUERIES = [
     "劳动合同试用期最长能约定多久",
@@ -42,7 +42,7 @@ def main() -> None:
         print(f"\nQ: {q}")
         show("dense", dense, idx)
         show("bm25", lex, idx)
-        print(f"  hybrid   " + "  ".join(f"{c['doc_id']}#{c['offset']}({c['score']:.4f})"
+        print("  hybrid   " + "  ".join(f"{c['doc_id']}#{c['offset']}({c['score']:.4f})"
                                          for c in hybrid[:3]))
         print(f"  首条命中：{hybrid[0]['title']} {hybrid[0]['article']} | {hybrid[0]['text'][:60]}")
         print(f"  耗时 {time.time()-t0:.2f}s（含模型 warm 后）")

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """下载模型权重到 E 盘缓存，供本地加载使用。
 
 为什么不用 huggingface_hub：hub 1.21 会校验响应域名，走镜像抛
@@ -9,7 +8,6 @@ FileMetadataError；且 hf-mirror 对 API 请求返回 308 跳回 huggingface.co
     python scripts/fetch_model.py --ms Qwen/Qwen2.5-3B-Instruct     # ModelScope
 """
 import argparse
-import json
 from pathlib import Path
 
 import requests

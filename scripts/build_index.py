@@ -9,8 +9,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from kbra.chunking import iter_corpus          # noqa: E402
-from kbra.index import build                   # noqa: E402
+from kbra.chunking import iter_corpus  # noqa: E402
+from kbra.index import build  # noqa: E402
 
 chunks = iter_corpus()
 print(f"docs→chunks: {len({c['doc_id'] for c in chunks})} 篇 → {len(chunks)} 块")

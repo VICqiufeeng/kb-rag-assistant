@@ -10,10 +10,21 @@ import secrets
 from datetime import datetime, timedelta, timezone
 
 import bcrypt
-from sqlalchemy import (JSON, Boolean, DateTime, Float, ForeignKey, Integer,
-                        SmallInteger, String, Text, create_engine, select)
-from sqlalchemy.orm import (DeclarativeBase, Mapped, Session, mapped_column,
-                            sessionmaker)
+from sqlalchemy import (
+    JSON,
+    Boolean,
+    DateTime,
+    Engine,
+    Float,
+    ForeignKey,
+    Integer,
+    SmallInteger,
+    String,
+    Text,
+    create_engine,
+    select,
+)
+from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column, sessionmaker
 
 from .config import DB_URL, TOKEN_TTL_HOURS
 

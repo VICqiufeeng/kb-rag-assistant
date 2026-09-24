@@ -17,13 +17,23 @@ from typing import Literal
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from pydantic import BaseModel, Field
-from sqlalchemy import desc, delete, select
+from sqlalchemy import delete, desc, select
 from sqlalchemy.orm import Session
 
-from .db import (AuthToken, Feedback, QaLog, User, hash_password, hash_token,
-                 issue_token, session_factory, user_by_token, verify_password)
 from .config import WEB_DIR
-from .generate import answer as generate_answer          # 单测里 monkeypatch 这个符号
+from .db import (
+    AuthToken,
+    Feedback,
+    QaLog,
+    User,
+    hash_password,
+    hash_token,
+    issue_token,
+    session_factory,
+    user_by_token,
+    verify_password,
+)
+from .generate import answer as generate_answer  # 单测里 monkeypatch 这个符号
 from .generate import version_caveat
 from .index import Index
 
@@ -224,11 +234,11 @@ def history(limit: int = 20, user: User = Depends(current_user),
     ratings = {f.log_id: f.rating for f in
                db.scalars(select(Feedback).where(Feedback.user_id == user.id))}
     return {"items": [{
-        "log_id": l.id, "question": l.question, "answer": l.answer,
-        "refused": l.refused, "citations": l.citations, "warnings": l.warnings,
-        "caveat": l.caveat, "feedback": ratings.get(l.id), "created_at":
-            l.created_at.isoformat(timespec="seconds"),
-    } for l in logs]}
+        "log_id": row.id, "question": row.question, "answer": row.answer,
+        "refused": row.refused, "citations": row.citations, "warnings": row.warnings,
+        "caveat": row.caveat, "feedback": ratings.get(row.id), "created_at":
+            row.created_at.isoformat(timespec="seconds"),
+    } for row in logs]}
 
 
 # 前端与接口同源（一个进程、无 CORS），mount 放最后以免吃掉 /api 与 /health

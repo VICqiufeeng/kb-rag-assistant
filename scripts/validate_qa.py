@@ -10,12 +10,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from kbra.config import CHUNKS            # noqa: E402
-from kbra.evaluate import resolve_gold    # noqa: E402
+from kbra.config import CHUNKS  # noqa: E402
+from kbra.evaluate import resolve_gold  # noqa: E402
 
-items = [json.loads(l) for l in
-         Path("eval/qa_set.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
-chunks = [json.loads(l) for l in CHUNKS.read_text(encoding="utf-8").splitlines() if l.strip()]
+items = [json.loads(line) for line in
+         Path("eval/qa_set.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+chunks = [json.loads(line) for line in CHUNKS.read_text(encoding="utf-8").splitlines() if line.strip()]
 by_id = {c["chunk_id"]: c for c in chunks}
 
 resolved, warns = resolve_gold(items, chunks)

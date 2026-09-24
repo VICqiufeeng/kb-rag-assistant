@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from kbra.generate import MIN_SIM, REFUSAL_MARK, answer   # noqa: E402
+from kbra.generate import MIN_SIM, REFUSAL_MARK, answer  # noqa: E402
 
 CHUNK = {"chunk_id": "law_056#30", "doc_id": "law_056",
          "title": "《中华人民共和国数据安全法》", "article": "第三十条",
@@ -42,10 +42,19 @@ def test_低相似度时在调用模型前就拒答():
 
 
 def test_相似度刚好等于阈值时不放行():
-    """判定是 best < MIN_SIM，等于阈值要走模型（这里同样用哨兵证明没放行）。"""
+    """判定是 best < MIN_SIM，等于阈值就要走模型。
+
+    用「碰一下就炸」的哨兵当 llm：只有真的把请求交给生成才会触发 AssertionError，
+    因此这条断言锁定的是「阈值边界不放行」这个具体行为，而不是任何异常都算过。
+    """
     import pytest
-    with pytest.raises(Exception):
-        answer("边界问题", LowSimIndex(score=MIN_SIM), llm=(object(), object()))
+
+    class Boom:
+        def __getattr__(self, name):
+            raise AssertionError(f"边界值不该调用模型，却访问了 llm.{name}")
+
+    with pytest.raises(AssertionError, match="不该调用模型"):
+        answer("边界问题", LowSimIndex(score=MIN_SIM), llm=(Boom(), Boom()))
 
 
 def test_实测负例都高于阈值():

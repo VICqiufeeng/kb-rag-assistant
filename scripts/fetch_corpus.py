@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """从国务院政策文件库抓取公开文件全文，作为 RAG 语料。
 
 来源：https://www.gov.cn/zhengce/zhengceku/ （公开发布的国务院公文，注明出处即可使用）

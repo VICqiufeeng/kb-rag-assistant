@@ -48,5 +48,5 @@ def rerank(query: str, chunks: list[dict], top_n: int = 5) -> list[dict]:
     if not chunks:
         return []
     ss = scores(query, [c["embed_text"] for c in chunks])
-    ranked = sorted(zip(ss, chunks), key=lambda x: -x[0])
+    ranked = sorted(zip(ss, chunks, strict=True), key=lambda x: -x[0])
     return [{**c, "rerank_score": round(s, 4)} for s, c in ranked[:top_n]]

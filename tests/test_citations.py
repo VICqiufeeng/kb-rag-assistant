@@ -9,8 +9,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from kbra.evaluate import rank_metrics, resolve_gold      # noqa: E402
-from kbra.generate import article_no, check_citations     # noqa: E402
+from kbra.evaluate import rank_metrics, resolve_gold  # noqa: E402
+from kbra.generate import article_no, check_citations  # noqa: E402
 
 CHUNKS = [
     {"chunk_id": "law_056#30", "doc_id": "law_056", "title": "《中华人民共和国数据安全法》",
@@ -94,7 +94,7 @@ ECHO = ("【资料】[1][2]\n"
 
 def test_清掉复读的段头但保留引用解析():
     """真实输出（M5 接口冒烟，问题=劳动合同试用期最长能约定多久）。"""
-    from kbra.generate import ECHO_RE, CITED_RE
+    from kbra.generate import CITED_RE, ECHO_RE
 
     assert ECHO_RE.sub("", ECHO, count=1).strip().startswith("根据《")
     # 引用标来自原文，清理只作用于显示文本

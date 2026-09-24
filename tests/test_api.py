@@ -13,8 +13,8 @@ from sqlalchemy.orm import sessionmaker
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-import kbra.api as api                                                   # noqa: E402
-from kbra.db import Base, Feedback, QaLog                                # noqa: E402
+import kbra.api as api  # noqa: E402
+from kbra.db import Base, Feedback, QaLog  # noqa: E402
 
 CHUNK = {"chunk_id": "law_056#30", "doc_id": "law_056", "title": "《中华人民共和国数据安全法》",
          "article": "第三十条", "text": "第三十条 从事安全评估工作应当…" * 40,

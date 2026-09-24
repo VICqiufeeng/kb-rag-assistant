@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """本地 LLM 冒烟测试：加载 Qwen2.5-3B-Instruct，量显存，跑一次带资料的生成。
 模型需先用 scripts/fetch_model.py --ms 下载到 E 盘。
 """

@@ -10,7 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from kbra.config import CHUNKS   # noqa: E402
+from kbra.config import CHUNKS  # noqa: E402
 
 # 可考点：百分比、金额、天数、年月、序数、金额上限
 FACT_RE = re.compile(r"\d+%|百分之|[\d一二三四五六七八九十百千]+(?:日|个月|年|万元|元|倍|人|名|个工作日)")
@@ -22,7 +22,7 @@ def main() -> None:
     ap.add_argument("--max", type=int, default=10, help="每个文档打印多少条")
     args = ap.parse_args()
 
-    rows = [json.loads(l) for l in CHUNKS.read_text(encoding="utf-8").splitlines() if l.strip()]
+    rows = [json.loads(line) for line in CHUNKS.read_text(encoding="utf-8").splitlines() if line.strip()]
     for doc_id in args.doc_ids:
         blocks = [c for c in rows if c["doc_id"] == doc_id]
         if not blocks:

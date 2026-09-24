@@ -10,8 +10,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from kbra.generate import answer, load_llm, version_caveat   # noqa: E402
-from kbra.index import Index                                 # noqa: E402
+from kbra.generate import answer, load_llm, version_caveat  # noqa: E402
+from kbra.index import Index  # noqa: E402
 
 DEFAULT_QUERIES = [
     "劳动合同试用期最长能约定多久",

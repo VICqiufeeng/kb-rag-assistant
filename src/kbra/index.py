@@ -51,8 +51,8 @@ class Index:
     def __init__(self):
         from rank_bm25 import BM25Okapi
 
-        self.chunks = [json.loads(l) for l in
-                       CHUNKS.read_text(encoding="utf-8").splitlines() if l.strip()]
+        self.chunks = [json.loads(line) for line in
+                       CHUNKS.read_text(encoding="utf-8").splitlines() if line.strip()]
         self.vectors = np.load(VECTORS)
         with (INDEX_DIR / "bm25.pkl").open("rb") as f:
             self.bm25 = BM25Okapi(pickle.load(f))

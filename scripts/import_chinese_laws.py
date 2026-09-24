@@ -56,7 +56,7 @@ def main() -> None:
     with zipfile.ZipFile(CACHE_ZIP) as z:
         names = [n for n in sorted(z.namelist()) if n.endswith(".txt")]
         for seq, name in enumerate(names, start=1):
-            lines = [clean(l) for l in z.read(name).decode("utf-8").splitlines() if clean(l)]
+            lines = [clean(ln) for ln in z.read(name).decode("utf-8").splitlines() if clean(ln)]
             body = "\n".join(lines)
             head = TITLE_RE.match(lines[0]) if lines else None
             title = head.group(1) if head else name[:-4]

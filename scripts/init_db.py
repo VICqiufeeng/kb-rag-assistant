@@ -12,10 +12,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from sqlalchemy import create_engine, inspect, select, text   # noqa: E402
-from sqlalchemy.engine import make_url                    # noqa: E402
+from sqlalchemy import create_engine, inspect, select, text  # noqa: E402
+from sqlalchemy.engine import make_url  # noqa: E402
 
-from kbra.config import DB_URL                            # noqa: E402
+from kbra.config import DB_URL  # noqa: E402
 from kbra.db import User, engine_for, hash_password, session_factory  # noqa: E402
 
 
